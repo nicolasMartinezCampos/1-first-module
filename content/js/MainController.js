@@ -1,7 +1,11 @@
-function MainController($scope){
-  $scope.name = 'Todd';
+function MainController(a, b){
+  a.name = 'Todd';
 }
 
 angular
   .module('app')
-  .controller('MainController', MainController);
+  .controller('MainController', [
+    '$scope',
+    '$rootScope',
+    MainController
+  ]);
